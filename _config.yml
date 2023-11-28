@@ -5,5 +5,5 @@ show_downloads: True
 navigation:
   - title: Home
     url: /
-  - title: Example2
-    url: example2
+  - title: Page2
+    url: pagetest
