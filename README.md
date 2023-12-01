@@ -1,6 +1,4 @@
-<div style="width: 100%; height: 300px; overflow: hidden;">
-  <img src="hollywood-copy.jpg" alt="Header Image" style="width: 100%; height: auto;">
-</div>
+![Header Image](hollywood-copy.jpg){: style="width: 100%; height: auto; object-fit: cover;" }
 
 # Decoding the DNA of our characters on the silver screen
 
