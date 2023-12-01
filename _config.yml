@@ -1,9 +1,7 @@
 remote_theme: "jasonlong/cayman-theme"
 title: Decoding the DNA of our characters on the silver screen
 description: Project ADAcadabra1001010
-show_downloads: True
+show_downloads: False
 navigation:
   - title: Home
     url: /
-  - title: example
-    url: example.md
