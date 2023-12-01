@@ -1,4 +1,7 @@
-![Header Image Alt Text](hollywood-california-skyline-los-angeles-urban-landscape-city-scape-city-of-angels-malibu-beach-sunset-strip-60-s-style-silhouette-graphic-illustration-vector.jpg)
+<div style="width: 100%; height: 300px; overflow: hidden;">
+  <img src="hollywood-copy.jpg" alt="Header Image" style="width: 100%; height: auto;">
+</div>
+
 # Decoding the DNA of our characters on the silver screen
 
 
