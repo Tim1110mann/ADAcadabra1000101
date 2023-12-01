@@ -27,7 +27,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #000 /*black*/
+    color: #000; /*black*/
     text-align: center;
     white-space: nowrap;
 }
