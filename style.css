@@ -1,7 +1,25 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('hollywood-copy.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
 }
+
+.header-container {
+    position: relative;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Set the text color */
+    font-size: 2em; /* Adjust the font size as needed */
+    text-align: center;
+}
+
