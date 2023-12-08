@@ -34,7 +34,7 @@ header {
 }
 
 .overlay-text h1 {
-    font-size: 3em; /* Adjust the font size as needed */
+    font-size: 3em;
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
 }
@@ -111,4 +111,10 @@ p {
     text-align: left; /* Left-align the text within paragraphs */
     max-width: 800px; /* Set a maximum width for paragraphs */
     margin: 0 auto; /* Center-align paragraphs within the body */
+}
+
+h2 {
+    color: #d32f2f;
+    font-size: 24px;
+    font-weight: bold;
 }
