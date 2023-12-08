@@ -38,11 +38,6 @@ header {
     margin-bottom: 10px;
 }
 
-.overlay-text p {
-    font-size: 1.2em; /* Adjust the font size as needed */
-    margin: 0;
-}
-
 /*Body style*/
 body {
     background-color: #f4f4f4;
