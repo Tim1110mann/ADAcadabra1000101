@@ -1,12 +1,12 @@
 /*Header styles */
 header {
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 24px;
+    background-color: #ffcc80;
+    color: #d32f2f;
+    font-size: 20px;
     text-align: center;
-    position: fixed;
+    /*position: fixed;
     z-index: 1000; /* Ensure the navigation bar is above other elements */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Garamond', serif;
 }
 
 /*Banner styles */
@@ -92,7 +92,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     font-family: 'Merriweather', serif;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     text-align: center;
 }
