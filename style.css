@@ -79,8 +79,13 @@ nav a {
         margin-top: 10px;
     }
 
-    nav li {
+    nav li-right {
         margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav li-left {
+        margin-left: 0;
         margin-bottom: 10px;
     }
 }
