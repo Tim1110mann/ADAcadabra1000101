@@ -95,6 +95,12 @@ body {
     text-align: center;
 }
 
+.body-content {
+    max-width: 800px; /* Set a maximum width for your body content */
+    margin: 20px auto; /* Add margin to the top and bottom */
+    padding: 0 20px; /* Optional: Add padding to the sides for better readability */
+}
+
 /* Paragraph style */
 p {
     text-align: left; /* Left-align the text within paragraphs */
