@@ -48,17 +48,17 @@ header {
     align-items: center;
 }
 
-h2 {
-    font-size: 24px;
-}
-
 nav ul {
     list-style: none;
     display: flex;
 }
 
-nav li {
+nav li-right {
     margin-right: 20px;
+}
+
+nav li-left {
+    margin-left: 20px;
 }
 
 nav a {
