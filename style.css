@@ -4,7 +4,7 @@ header {
     color: #ffffff;
     font-size: 3em;
     text-align: center;
-    font-family: 'Garamond', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*Banner styles*/
@@ -50,6 +50,6 @@ body {
 /* Paragraph style */
 p {
     text-align: left; /* Left-align the text within paragraphs */
-    max-width: 600px; /* Set a maximum width for paragraphs */
+    max-width: 800px; /* Set a maximum width for paragraphs */
     margin: 0 auto; /* Center-align paragraphs within the body */
 }
