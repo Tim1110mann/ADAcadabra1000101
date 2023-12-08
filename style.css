@@ -1,10 +1,4 @@
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: 'DM Sans', sans-serif;
-    text-align: center;
-}
-
+/*Header styles */
 header {
     background-color: #007bff;
     color: #fff;
@@ -12,6 +6,7 @@ header {
     font-family: 'Garamond', serif;
 }
 
+/*Banner styles*/
 .banner {
     position: relative;
     width: 100%;
@@ -23,6 +18,8 @@ header {
     width: 100%;
     height: auto;
 }
+
+/* Overlaying image banner style*/
 
 .overlay-text {
     position: absolute;
@@ -44,6 +41,15 @@ header {
     margin: 0;
 }
 
+/*Body style*/
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+/* Paragraph style */
 p {
     text-align: left; /* Left-align the text within paragraphs */
     max-width: 600px; /* Set a maximum width for paragraphs */
