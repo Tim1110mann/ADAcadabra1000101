@@ -2,8 +2,10 @@
 header {
     background-color: #007bff;
     color: #ffffff;
-    font-size: 3em;
+    font-size: 24px;
     text-align: center;
+    position: fixed;
+    z-index: 1000; /* Ensure the navigation bar is above other elements */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -34,8 +36,9 @@ header {
 }
 
 .overlay-text h1 {
-    font-size: 6em; /* Adjust the font size as needed */
+    font-size: 3em; /* Adjust the font size as needed */
     margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Navigation bar */
@@ -89,7 +92,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.5;
     text-align: center;
 }
