@@ -1,7 +1,8 @@
 /*Header styles */
 header {
     background-color: #007bff;
-    color: #fff;
+    color: white;
+    font-size: 6em;
     text-align: center;
     font-family: 'Garamond', serif;
 }
