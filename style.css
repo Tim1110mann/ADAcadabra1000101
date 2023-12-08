@@ -15,19 +15,14 @@ header {
     background-size: cover; /* Cover the entire container, maintaining aspect ratio */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
-    display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    color: #fff; /* Set text color to white or your preferred color */
-    text-align: center;
 }
 
 .banner img {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
-/* Overlaying image banner style*/
+/* Overlaying text banner style*/
 
 .overlay-text {
     position: absolute;
