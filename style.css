@@ -127,14 +127,21 @@ h3 {
 }
 
 /* Dual columns */
+.center-container {
+    margin: 0 auto;
+    width: 80%; /* Adjust the width as needed */
+}
+
 .c2 {
-      width: 80%;
-    }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
 .column {
-    width: 40%; /* Set the width of each column */
-    float: left; /* Float the columns to the left */
-    margin-right: 2%; /* Add some space between the columns */
+    width: 48%; /* Set the width of each column */
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 /* Clear the float to prevent issues with following elements */
