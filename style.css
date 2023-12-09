@@ -131,13 +131,13 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vh;
+    width: 100%;
 }
 
 .column-container {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Adjust the width as needed */
+    max-width: 800px; /* Adjust the width as needed */
 }
 
 .column {
