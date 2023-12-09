@@ -125,3 +125,21 @@ h3 {
     font-weight: bold;
     text-align: center;
 }
+
+/* Dual columns */
+.c2 {
+      width: 100%;
+    }
+
+.column {
+    width: 48%; /* Set the width of each column */
+    float: left; /* Float the columns to the left */
+    margin-right: 2%; /* Add some space between the columns */
+}
+
+/* Clear the float to prevent issues with following elements */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
