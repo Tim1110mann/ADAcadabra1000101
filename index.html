@@ -43,7 +43,34 @@
         </p>
         <h3><i>What features define particular character tropes?</i></h3>
         <h2>Features & Character Tropes</h2>
-        <p>Before we have fun analyzing the data, we should probably define it first. What are the features we</p>
+        <p>
+            Before we have fun analyzing the data, we should probably define the crucial elements of our question of interest first. 
+            What are the actor features we want to analyse? 
+            What character tropes do we want to use for our categories?
+        </p>
+        <p>
+            We use the dataset provided by the CMU Movie Summary Corpus, collected by David Bamman, Brendan O'Connor, and Noah Smith. 
+            This dataset provides us with a lot of interesting data such plot summaries of more than 42 000 movies, the actors and their roles in each movie, their box office numbers, the movie genres and more.
+            Despite all the data in the corpus, there is not enough data about the actors for our data story. 
+            As such, since an actor's face is probably the one thing they cannot drastically alter for a role, we construct our own additional dataset containing good quality images of actors' faces pulled TheMovieDatabase (TMDB).
+            With that, we embark on our first step in our data story: pre-processing the data.
+        </p>
+        <p>
+            We will not bore you with the intricate details of this first step. 
+            The important results were that, courtesy of Bamman, O'Connor and Smith's work, we were able to identify 16 unique character tropes represented across 501 movies.
+            This narrowed our field of view and allowed us to focus on these 501 movies. In these narrowed dataset, we observe 335 unique actors, each playing roles that fit in one or more tropes.
+            "Show plot of tropes representation across the 501 movies here."
+        </p>
+        <p>
+            We identified a set of features to define our actors.:
+            <ul>
+                <li> Genre </li>
+                <li> Age </li>
+                <li> Height </li>
+                <li> Facial Encodings</li>
+            </ul>
+            "Show plots of distribution of these features."
+        </p>
        <div class="center-container">
            <div class="column-container">
                 <div class="column">
