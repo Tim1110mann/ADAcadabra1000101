@@ -128,11 +128,11 @@ h3 {
 
 /* Dual columns */
 .c2 {
-      width: 100%;
+      width: 80%;
     }
 
 .column {
-    width: 48%; /* Set the width of each column */
+    width: 40%; /* Set the width of each column */
     float: left; /* Float the columns to the left */
     margin-right: 2%; /* Add some space between the columns */
 }
