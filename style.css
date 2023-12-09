@@ -127,26 +127,22 @@ h3 {
 }
 
 /* Dual columns */
-.center-container {
-    margin: 0 auto;
-    width: 80%; /* Adjust the width as needed */
+ .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.c2 {
+.column-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    width: 80%; /* Adjust the width as needed */
 }
 
 .column {
     width: 48%; /* Set the width of each column */
     box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-/* Clear the float to prevent issues with following elements */
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+    padding: 20px;
+    border: 1px solid #ddd;
 }
