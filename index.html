@@ -63,7 +63,24 @@
         </p>
         <br>
         <p> 
-            The results of this first step were that, courtesy of Bamman, O'Connor and Smith's work, we were able to identify 16 unique character tropes represented across 501 movies.
+            The results of this first step were that, courtesy of Bamman, O'Connor and Smith's work, we were able to identify 16 unique character tropes represented across 501 movies:
+            <ul>
+                <li> <code> skilled_badass </code> </li>
+                <li> <code> loser </code> </li>
+                <li> <code> laidback_freebird </code> </li>
+                <li> <code> jock </code> </li>
+                <li> <code> charismatic_charmer </code> </li>
+                <li> <code> respected_leader </code> </li>
+                <li> <code> crazy_fighter </code> </li>
+                <li> <code> dumb_and_clumsy </code> </li>
+                <li> <code> shallow_and_popular </code> </li>
+                <li> <code> old_wise_quirky </code> </li>
+                <li> <code> sidekick </code> </li>
+                <li> <code> emotional_damage </code> </li>
+                <li> <code> evil_character </code> </li>
+                <li> <code> mean_officer </code> </li>
+                <li> <code> tech_genius </code> </li>
+            </ul>
             This narrowed our field of view and allowed us to focus on these 501 movies. In these narrowed dataset, we observe 335 unique actors, each playing roles that fit in one or more tropes.
         </p>
         <p> "Show plot of tropes representation across the 501 movies here."</p>
@@ -71,11 +88,13 @@
         <p>
             We identified a set of features to define our actors.:
             <ul>
-                <li> Genre </li>
-                <li> Age </li>
-                <li> Height </li>
-                <li> Facial Encodings</li>
+                <li> <code> ActorGender </code> </li>
+                <li> <code> ActorAge </code> </li>
+                <li> <code> ActorHeight </code> </li>
+                <li> <code> Facial Encodings </code> </li>
             </ul>
+            We decided to not keep the variable <i>Actor Ethnicity</i> as there was just too many missing values (over 30%). 
+            We could not find a suitable database to complete our data.
         </p>
         <p>"Show plots of distribution of these features."</p>
         <br>
