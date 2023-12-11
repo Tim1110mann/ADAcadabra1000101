@@ -139,18 +139,9 @@ h3 {
 #timeline {
     position: relative;
     margin: 20px auto;
-    width: 100%;
-    max-width: 600px; /* Adjust based on your design */
-}
-
-.timeline-item {
-    position: relative;
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 5px;
-    margin: 10px 0;
+    width: 4px;
+    background-color: #333;
+    height: 100vh;
 }
 
 .branch-container {
@@ -171,30 +162,33 @@ h3 {
 
 .branch-left {
     top: 0;
-    bottom: 50%;
+    height: 50%;
 }
 
-  .branch-right {
-    top: 50%;
+.branch-right {
     bottom: 0;
+    height: 50%;
 }
 
 .merge-point {
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #333;
     width: 20px;
     height: 20px;
+    background-color: #333;
     border-radius: 50%;
-    position: absolute;
-}
-
-.merge {
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 
 .timeline-link {
     text-decoration: none;
     color: #333;
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin: 10px 0;
+    position: relative;
+    z-index: 2;
 }
