@@ -53,12 +53,8 @@ nav ul {
     display: flex;
 }
 
-nav li-right {
+nav li {
     margin-right: 20px;
-}
-
-nav li-left {
-    margin-left: 20px;
 }
 
 nav a {
@@ -79,15 +75,11 @@ nav a {
         margin-top: 10px;
     }
 
-    nav li-right {
+    nav li {
         margin-right: 0;
         margin-bottom: 10px;
     }
 
-    nav li-left {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
 }
 
 /*Body style*/
