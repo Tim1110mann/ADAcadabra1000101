@@ -135,23 +135,62 @@ h3 {
     text-align: center;
 }
 
-/* Dual columns */
- .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Timeline Navigation Bar */
+#timeline {
+    position: relative;
+    margin: 20px auto;
+    width: 4px;
+    background-color: #333;
+    height: 100vh;
+}
+
+.timeline-item {
+    position: absolute;
     width: 100%;
-}
-
-.column-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px; /* Adjust the width as needed */
-}
-
-.column {
-    width: 48%; /* Set the width of each column */
     box-sizing: border-box;
     padding: 20px;
-    border: 1px solid #ddd;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.branch-point {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.branch-left {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.branch-right {
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.merge-point {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.merge {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-link {
+    text-decoration: none;
+    color: #333;
 }
