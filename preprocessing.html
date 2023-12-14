@@ -25,13 +25,13 @@
     </header>
     <h1>Pre-processing our data - Features & Character tropes</h1>
     <div class="body-content">
-        <h2>Character Tropes</h2>
             <p>
                 Before we have fun analyzing the data, we should probably get on the same page on the terms of our question of interest. 
                 What are the actor features do we want to analyse? 
                 What character tropes are we using for our categories?
             </p>
             <br>
+            <h2>Character Tropes</h2>
             <p>
                 As mentionned in our <a href="https://tim1110mann.github.io/ADAcadabra1000101/resources.html">Ressources</a> page we are using the dataset provided by the CMU Movie Summary Corpus, collected by David Bamman, Brendan O'Connor, and Noah Smith. 
                 This dataset provides us with lots of interesting data on more than 42 000 movies such as the actors and their roles in each movie, their box office numbers, the movie genres and more.
@@ -81,25 +81,64 @@
                 There is now at least a dozen characters per trope, giving us a much better sample size to base our analysis on.
             </p>
             <br>
+            <h2>Actor Features</h2>
+            <br>
+            <h4>Height, Age, Gender & Ethnicities</h4>
             <p> 
-                The results of this first step were that, courtesy of Bamman, O'Connor and Smith's work, we were able to identify 16 unique character tropes represented across 501 movies:
-                
-                This narrowed our field of view and allowed us to focus on these 501 movies. In these narrowed dataset, we observe 335 unique actors, each playing roles that fit in one or more tropes.
+                With our tropes defined and out of the way, we need to define our actor features. 
+                The CMU Corpus gives us a few interesting actor characteristics that we will explore such as <code>ActorHeight</code>, <code>ActorAge</code>, <code>ActorGender</code> and <code>ActorEthnicity</code>.
             </p>
-            <p> "Show plot of tropes representation across the 501 movies here."</p>
             <br>
             <p>
-                We identified a set of features to define our actors.:
+                As we explored <code>ActorEthnicity</code>, we slowly realised that this variable would be unusable for our data analysis. 
+                Indeed, we observed more than 30% of missing data for this variable <i>anything over 10% increases the likelihood of biased results)</i> and we could not find any suitable datasets online to complete these missing values.
+                The ethnicities defined in the CMU Corpus were extremely precise, such as <code>Afro Trinidadians and Tobagonians</code> or <code>Ashkenazi Jews</code>. 
+                A lot of the ethnicities defined in the data seemed to fall more under the umbrella of nationality, with labels like <code>Korean American</code>. 
+                At first, we tried to simplify these ethnicities, in an attempt to group them together as we did with the tropes earlier. 
+                But this raised a clear ethical question, who are we to say that an actor identifying as Korean American can be reduced to either just Korean or just American?
+            </p>
+            <p>
+                As such, with all of these issues, we decided to remove this variable from our analysis, simplifying our analysis and saving us from the burden of ethical dilemnas!
+            </p>
+            <br>
+            <p> 
+                Let us now explore <code>ActorHeight</code>, <code>ActorAge</code> and <code>ActorGender</code>. 
+                These variables did not have nearly as many missing values as <code>ActorEthnicity</code> and as such, we were able to complete them manually.
+                <img src="preprocessing_graphs/ActorHeight - ActorAge by Gender.png">
+            </p>
+            <p>
+                From the plots, we observe that female actors are usually much younger than their male counterparts <i>(and smaller but this probably more a matter of biology than casting preference)</i>.
+                Could this be our first clue for our analysis? The only way for you to find out is keep reading...
+            </p>
+            <br>
+            <h4>Facial Encodings</h4>
+            <p>
+                Having <code>Height</code>, <code>Age</code> and <code>Gender</code> is all well and good but we probably won't go very far with just these features to qualify an actor <i>(it would be quite reductive to qualify Brad Pitt as 1.8m tall 59 year-old man)</i>.
+                No... we need something more... something more substantial to properly characterise each actor.
+            </p>
+            <p>
+                Have you ever had that moment when you looked at your friend and you said to yourself, "You would make a fantastic protagonist"? 
+                Or that moment after a movie screening when you just say "That character was perfectly cast". 
+                Think Draco Malfoy played by Tom Felton in Harry Potter, or Joffrey Baratheon played by Jack Gleeson in Games of Thrones. 
+                There is just something about them that perfectly match with their <i>(hypothesised in the case of your friend)</i> roles. 
+                It can't be their personalities because, well, you don't know the actors <i>(unless you do, in that case could you ask Tom to sign my Philosopher's Stone book for me?)</i>.
+                And with today's means, it is highly common for actors to change their body shape and haircut for the role they're casted in. 
+                However, there is one thing they can not drastically alter: their face.
+            </p>
+            <br>
+            <p>
+                As such, we decided to analyse the face of each actor in our dataset, characterising them as facial encodings. (add what the encodings represent, maybe as an example).
+            </p>
+            <br>
+            <p>
+                And so, we identified a set of features to define our actors.:
                 <ul>
                     <li> <code> ActorGender </code> </li>
                     <li> <code> ActorAge </code> </li>
                     <li> <code> ActorHeight </code> </li>
                     <li> <code> Facial Encodings </code> </li>
                 </ul>
-                We decided to not keep the variable <i>Actor Ethnicity</i> as there was just too many missing values (over 30%). 
-                We could not find a suitable database to complete our data.
             </p>
-            <p>"Show plots of distribution of these features."</p>
             <br>
     </div>
 </body>
