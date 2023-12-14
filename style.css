@@ -55,14 +55,14 @@ header {
     height: 60px;
 }
 
-nav ul {
+nav-ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-nav li {
+nav-li {
     margin-right: 20px;
 }
 
@@ -88,11 +88,11 @@ nav a {
         align-items: flex-start;
     }
 
-    nav ul {
+    nav-ul {
         margin-top: 10px;
     }
 
-    nav li {
+    nav-li {
         margin-right: 0;
         margin-bottom: 10px;
     }
@@ -113,6 +113,13 @@ body {
     max-width: 800px; /* Set a maximum width for your body content */
     margin: 20px auto; /* Add margin to the top and bottom */
     padding: 0 20px; /* Optional: Add padding to the sides for better readability */
+}
+
+/*Lists*/
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 /* Paragraph style */
