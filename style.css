@@ -136,9 +136,16 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    color: #d32f2f;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
 /*Image*/
 img {
-    width: 50%; 
+    width: 100%; 
     height: auto; 
     display: block; 
     margin: 0 auto; 
