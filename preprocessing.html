@@ -39,7 +39,8 @@
             </p>
             <p>
                 The CMU Corpus provides us with 72 character tropes, based of <a href="https://tvtropes.org/">TVTropes.org</a>, with 501 characters manually categorised in each.
-                We can view the distribution of these characters in the graph below.
+                As such, we narrow our focus on these 501 characters.
+                We can view the distribution of these characters per trope in the graph below.
                 <img src="preprocessing_graphs/characters_per_trope.png" alt="Characters per Trope">
             </p>
             <p>
@@ -80,9 +81,7 @@
             <p>
                 There is now at least a dozen characters per trope, giving us a much better sample size to base our analysis on.
             </p>
-            <br>
             <h2>Actor Features</h2>
-            <br>
             <h4>Height, Age, Gender & Ethnicities</h4>
             <p> 
                 With our tropes defined and out of the way, we need to define our actor features. 
@@ -91,7 +90,7 @@
             <br>
             <p>
                 As we explored <code>ActorEthnicity</code>, we slowly realised that this variable would be unusable for our data analysis. 
-                Indeed, we observed more than 30% of missing data for this variable <i>anything over 10% increases the likelihood of biased results)</i> and we could not find any suitable datasets online to complete these missing values.
+                Indeed, we observed more than 30% of missing data for this variable <i>(anything over 10% increases the likelihood of biased results)</i> and we could not find any suitable datasets online to complete these missing values.
                 The ethnicities defined in the CMU Corpus were extremely precise, such as <code>Afro Trinidadians and Tobagonians</code> or <code>Ashkenazi Jews</code>. 
                 A lot of the ethnicities defined in the data seemed to fall more under the umbrella of nationality, with labels like <code>Korean American</code>. 
                 At first, we tried to simplify these ethnicities, in an attempt to group them together as we did with the tropes earlier. 
@@ -107,13 +106,13 @@
                 <img src="preprocessing_graphs/ActorHeight - ActorAge by Gender.png">
             </p>
             <p>
-                From the plots, we observe that female actors are usually much younger than their male counterparts <i>(and smaller but this probably more a matter of biology than casting preference)</i>.
+                From the plots, we observe that female actors are usually much younger than their male counterparts <i>(and smaller but this is probably more a matter of biology than casting preference)</i>.
                 Could this be our first clue for our analysis? The only way for you to find out is keep reading...
             </p>
             <br>
             <h4>Facial Encodings</h4>
             <p>
-                Having <code>Height</code>, <code>Age</code> and <code>Gender</code> is all well and good but we probably won't go very far with just these features to qualify an actor <i>(it would be quite reductive to qualify Brad Pitt as 1.8m tall 59 year-old man)</i>.
+                Having <code>Height</code>, <code>Age</code> and <code>Gender</code> is all well and good but we probably won't go very far with just these features to qualify an actor <i>(it would be quite reductive to qualify Brad Pitt as an 1.8m tall 59 year-old man)</i>.
                 No... we need something more... something more substantial to properly characterise each actor.
             </p>
             <p>
@@ -127,7 +126,22 @@
             </p>
             <br>
             <p>
-                As such, we decided to analyse the face of each actor in our dataset, characterising them as facial encodings. (add what the encodings represent, maybe as an example).
+                As such, we decided to analyse the face of each actor in our dataset, characterising them as facial encodings and landmarks.
+                We extract facial images of the 347 actors playing the 501 characters (some actors play different roles) from <a href="https://www.themoviedb.org/">The Movie Database (TMDB)</a>.
+                A new dataset named <code>actor_images.csv</code> is created, containing the actor's name and their corresponding image stored as URL with its width and height.
+            </p>
+            <br>
+            <p>
+                Using the <code>face_recognition</code> and OpenCV libraries, we extract the facial landmarks and encodings of each image.
+            </p>
+            <p>
+                The facial landmarks are a set of 68 coordinates (x and y), corresponding to the implacement of human face specific landmarks such as eyes, nose, eyebrows, lips and chin in the image.
+            </p>
+            <p>
+                On the other hand, Face encodings are a set of 128 encodings, specific to a person. As explained in <a href="https://www.researchgate.net/publication/331769278_Surveillance_system_with_motion_and_face_detection_using_histograms_of_oriented_gradients">Ng et al.,2019</a> :
+            </p>
+            <p>
+                <i>"In  the  face  encoding  and  feature  extraction  step,  deep  learning is  implemented  in  this  step  to determine which part of the  face is  important to be measured for the face recognition process. The  deep convolutions  neural  network  is  being  trained  by  loading  a  training  face  image  of  a  known  person,  load another picture of the  same known person, and  load a picture of a  totally different person,  then the neural network tweak accordingly based  to the result. After  lots of repeating training, the neural network learns to reliably generate 128 measurements for each person."</i>
             </p>
             <br>
             <p>
