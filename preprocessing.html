@@ -113,7 +113,7 @@
                 Could this be our first clue for our analysis? The only way for you to find out is keep reading...
             </p>
             <br>
-            <h4>Facial Encodings</h4>
+            <h4>Facial Landmarks & Encodings</h4>
             <p>
                 Having <code>Height</code>, <code>Age</code> and <code>Gender</code> is all well and good but we probably won't go very far with just these features to qualify an actor <i>(it would be quite reductive to qualify Brad Pitt as an 1.8m tall, 59 year-old man)</i>.
                 No... we need something more... something more substantial to properly characterise each actor.
@@ -141,20 +141,50 @@
                 The facial landmarks are a set of 68 coordinates (x and y), corresponding to the implacement of human face specific landmarks such as eyes, nose, eyebrows, lips and chin in the image.
             </p>
             <p>
-                On the other hand, Face encodings are a set of 128 encodings, specific to a person. As explained in <a href="https://www.researchgate.net/publication/331769278_Surveillance_system_with_motion_and_face_detection_using_histograms_of_oriented_gradients">Ng et al.,2019</a> :
+                On the other hand, face encodings are a set of 128 encodings, specific to a person. As explained in <a href="https://www.researchgate.net/publication/331769278_Surveillance_system_with_motion_and_face_detection_using_histograms_of_oriented_gradients">Ng et al.,2019</a> :
             </p>
             <p>
                 <i>"In  the  face  encoding  and  feature  extraction  step,  deep  learning is  implemented  in  this  step  to determine which part of the  face is  important to be measured for the face recognition process. The  deep convolutions  neural  network  is  being  trained  by  loading  a  training  face  image  of  a  known  person,  load another picture of the  same known person, and  load a picture of a  totally different person,  then the neural network tweak accordingly based  to the result. After  lots of repeating training, the neural network learns to reliably generate 128 measurements for each person."</i>
             </p>
             <br>
             <p>
-                And so, we identified a set of features to define our actors.:
+                Our main interest concerning these facial features is to compare actors between each other, to identify which actors, associated with their respective role and trope, would cluster together. 
+                We will use the facial landmarks to compare the proportion between facial features. 
+                In other word, we will not compare the size of actors' noses but rather we will compare the proportion of the different distinctive facial features.
+                For example, an actor may appear to have large eyes due to their small face while in absolute their eyes are averaged sized.
+                We identify various distinctive facial features, <code>Eye Distance</code>, <code>Eye Positon</code>, <code>Nose Length</code>, <code>Nose Width</code>, <code>Eyebrow Length</code>, <code>Face Shape</code> and <code>Cheek Bones</code>.
+                Let us look which of these facial features are independent by observing their distributions.
+                <img src="preprocessing_graphs/Distribution of Facial Landmarks.png">
+            </p>
+            <p>
+                Three parameters jump out as variables of interest for us.
+                We observe that the <code>Nose Length</code> is normally distributed, whereas the <code>Eye Distance</code> and <code>Nose Width</code> are skewed towards the right and left, respectively.
+                In terms of correlation, <code>Eye Distance</code> and <code>Nose Length</code> are not correlated, <code>Nose Width</code> and <code>Eye Distance</code> weakly positively correlated, and <code>Nose Width</code> and <code>Nose Length</code> weakly negatively correlated. 
+                This means that we can consider those three parameters, <code>Eye Distance</code>, <code>Nose Length</code>, <code>Nose Length</code> as independant of each other and use them for our analysis as such.
+            </p>
+            <br>
+            <p>
+                While facial landmarks are used to compared the proportions of actors' facial features, we will use Facial Encodings to compare actors between each other.
+                Indeed, we calculate the Euclidean Distance between facial encodings to get a sense of how closely actors ressemble each other.
+                The higher the calculated value, the further apart they are.
+            </p>
+            <br>
+            <p>
+                And so,to conclude we identified a set of features to define our actors.:
                 <ul>
                     <li> <code> ActorGender </code> </li>
                     <li> <code> ActorAge </code> </li>
                     <li> <code> ActorHeight </code> </li>
+                    <li> <code> Facial Landmarks </code> </li>
                     <li> <code> Facial Encodings </code> </li>
                 </ul>
+                We can now combine this set of features with our 16 unique character tropes to start chipping away at the answer of our main question, <b>"Which features define particular character tropes?"</b>, locked behind a set of doors.
+                As we stand in front of these locked doors, having completed the first step of pre-processing, we say the magic words: <b><i>Open Sesame</i></b>.
+                And to our surprise, unlike Ali Baba in front of the thieves' den, two paths open up to us:
+            </p>
+            <h3> Supervised or Unsupervised Learning</h3>
+            <p>
+                Which should we choose? Why not both? But more importantly... which one will you choose to read first?
             </p>
             <br>
     </div>
