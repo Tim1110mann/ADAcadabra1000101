@@ -85,6 +85,18 @@ nav a {
     order: 3; 
 }
 
+.link-4 {
+    order: 4; 
+}
+
+.link-5 {
+    order: 5; 
+}
+
+.link-6 {
+    order: 6; 
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .container {
