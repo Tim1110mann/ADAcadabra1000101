@@ -40,7 +40,74 @@
     </header>
     <h1>Unsupervised Learning</h1>
     <div class="body-content">
-
+        <p>
+            Welcome to the Unsupervised Learning chapter! 
+            You chose correctly (don't say that to the <a href="https://tim1110mann.github.io/ADAcadabra1000101/supervised-learning.html">Supervised Learning</a> narrator, he gets jealous easily...). 
+            Join us as we opt for a more mysterious approach, keeping our data unlabelled and trying to observe patterns, courtesy of the different clustering methods we will use.
+            That means that we can keep pre-defined character tropes on the back-burner for now and, if it all goes swimmingly, we'll find them again at the end of this chapter.
+            Let's dive in!
+        </p>
+        <br>
+        <p>
+            As we believe that an actor's face is their most determinant feature, we will only focus on the facial landmarks and encodings to obtain the clusters.
+            We will start off with just the facial encodings.
+            Indeed, we wanted to see whether characters, played by their respective actors, will naturally cluster together based on their encodings. 
+            As a quick reminder, the facial encodings are a set of 128 measurements processed by the face recognition algorithm that is unique to each individual.
+            As such, it is a much better metric to diffenriate actors between each other than the facial landmarks.
+        </p>
+        <br>
+        <p>
+            Now let's get down to the nitty gritty and fun details.
+        </p>
+        <p>
+            We use the Euclidean distance between encodings as a metric of ressemblance between actors, and in consequence characters.
+            Our default threshold that defines whether two faces ressemble each other is 0.6 in terms of euclidean distance.
+            In other words, if the euclidean distance between actors is around 1, the actors do not ressemble each other.
+        </p>
+        <p>
+            We chose hierarchical clustering as our method for grouping. This entails cluster maps and dendogram functions from the Seaborn Library.
+            As such, we built out our cluster map based on Euclidean distance, using the "complete" function to define the distance between two clusters. 
+            That means that the distance between cluster <code>u</code> and the cluster <code>v</code> is defined as the maximum distance between a point in <code>u</code> and a point in <code>v</code>.
+        </p>
+        <p>"Show heat map plot"</p>
+        <br>
+        <p>
+            We obtain 4 clusters, yay! What does this mean concretely though, you ask? Good question!
+        </p>
+        <p>
+            We say that a trope is represented by a cluster when at least 50% of characters of that trope are present in said cluster.
+        </p>
+        <p>"Show bar chart of the different clusters in function of tropes"</p>
+        <br>
+        <p>
+            Let us analyse which tropes are composed of which cluster:
+            <ul>
+                <li>Cluster 1 is the smallest and does not contain a majority of any trope.</li>
+                <li>Cluster 2 is particularly interesting, differentiating itself from other clusters as we observe only 3 tropes being majoritarily represented.</li>
+                <li>Cluster 3 and 4 contain similar tropes and ressemble each other.</li>
+            </ul>
+        </p>
+        <p>
+            So, of the 16 tropes we identified in our <a href=""https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing </a> step, 13 of them cluster together in a specific cluster.
+            Interesteing stuff, right? Let's zoom in and dive into the inter- and intra-cluster analysis.
+        </p>
+        <br>
+        <p>
+            As Cluster 1 does not represent any of the tropes, we do not include it in further analysis.
+            This clustering is probably due to the ethnicity of the actors represented in this group, a feature we had to remove from our data analysis.
+        </p>
+        <p>
+            Cluster 2 represents more than 80% of the <code>shallow_and_popular</code> trope and more than 50% of the <code>emotional_damage</code> and <code>dumb_and_clumsy</code> tropes.
+        </p>
+        <p>
+            For cluster 3 and 4, we wanted to see if redoing the clustering on these clusters would allow us to further group tropes but no dice. 
+            None of the sub-clusters contained any majority of any of the tropes.
+            As such, we keep the clusters 3 and 4 as they are.
+        </p>
+        <br>
+        <p>
+            Now, we analyse the relevant encodings for each cluster, defined henceforth as C2, C3 and C4.
+        </p>
     </div>
 </body>
 </html>
