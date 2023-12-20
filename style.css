@@ -97,6 +97,10 @@ nav a {
     order: 6; 
 }
 
+.link-7 {
+    order: 7; 
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .container {
