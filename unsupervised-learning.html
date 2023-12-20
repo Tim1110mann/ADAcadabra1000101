@@ -107,6 +107,8 @@
         </p>
         <p>
             Cluster 2 represents more than 80% of the <code>shallow_and_popular</code> trope and more than 50% of the <code>emotional_damage</code> and <code>dumb_and_clumsy</code> tropes.
+            We observe that this Cluster is mainly represented by women. 
+            It seems like these tropes are primarily played by women. Another clue, we're getting closer!
         </p>
         <p>
             For cluster 3 and 4, we wanted to see if redoing the clustering on these clusters would allow us to further group tropes but no dice. 
@@ -115,7 +117,33 @@
         </p>
         <br>
         <p>
-            Now, we analyse the relevant encodings for each cluster, defined henceforth as C2, C3 and C4.
+            Now, we analyse the encodings for each cluster of interest, defined henceforth as C2, C3 and C4.
+            As such, for example if encoding <code>x</code> is very specific to C2 and differ from other clusters, we decide that this particular encoding can be used to describe people belonging to Cluster 2.
+            Let us find the most relevant encodings per cluster.
+        </p>
+        <p>
+            To be able to compare all the encodings, we standardized them using Z-score normalization and we choose robust statistics to describe them i.e their median and median absolute deviation (MAD).
+            Indeed, to find the most relevant encodings per cluster, we searched for the ones:
+            <ul>
+                <li>which varied less compared to their variation across all the data.</li>
+                <li>which are far from the other clusters' values.</li>
+                <li>which deviate the most compared to the data mean.</li>
+            </ul>
+        </p>
+        <p>
+            To this end, we computed:
+            <ul>
+                <li>each encoding's MAD ratio</li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            We can observe this in our scatter plot below.
+            "html plot here"
+        </p>
+        <br>
+        <p>
+            
         </p>
     </div>
 </body>
