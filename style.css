@@ -178,12 +178,13 @@ img {
     margin: 0 auto; 
 }
 
-imgtitle {
+figcaption {
     text-align: center;
     color: grey;
     font-family: 'Merriweather', serif;
     font-size: 10px;
-  }
+}
+
 
 /*Hover Effect*/
 a {
