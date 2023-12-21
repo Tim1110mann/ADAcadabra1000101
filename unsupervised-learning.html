@@ -25,14 +25,19 @@
                         <li><a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">Pre-Processing</a></li>
                     </ul>
                 </div>
-                <div class = "link-4">
+                <div class = "link-5">
                     <ul>
                         <li><a href="https://tim1110mann.github.io/ADAcadabra1000101/supervised-learning.html">Supervised Learning</a></li>
                     </ul>
                 </div>
-                <div class = "link-5">
+                <div class = "link-4">
                     <ul>
                         <li><a href="https://tim1110mann.github.io/ADAcadabra1000101/unsupervised-learning.html">Unsupervised Learning</a></li>
+                    </ul>
+                </div>
+                <div class = "link-6">
+                    <ul>
+                        <li><a href="https://tim1110mann.github.io/ADAcadabra1000101/conclusion.html">Conclusion</a></li>
                     </ul>
                 </div>
             </nav>
@@ -103,7 +108,9 @@
         <p>
             Cluster 2 represents more than 80% of the <code>shallow_and_popular</code> trope and more than 50% of the <code>emotional_damage</code> and <code>dumb_and_clumsy</code> tropes.
             We observe that this Cluster is mainly represented by women. 
-            It seems like these tropes are primarily played by women. Another clue, we're getting closer!
+            It seems like these tropes are primarily played by women. 
+            A quick look at the gender representation by cluster confirms this. It's another clue, we're getting closer!
+            <img src="UnsupervisedLearning_graphs/GenderinClusters.png">
         </p>
         <p>
             For cluster 3 and 4, we wanted to see if redoing the clustering on these clusters would allow us to further group tropes but no dice. 
@@ -145,8 +152,70 @@
         </p>
         <br>
         <p>
-            
+            From the scatter plot, we hand-picked the following most relevant encodings for each cluster using the criteria mentionned above.
+            <ul>
+                <li>Cluster 2: 77, 85, 63, 127, 89, 9, 81 and 72</li>
+                <li>Cluster 3: 28, 93, 107, 10, 78 and 53</li>
+                <li>Cluster 4: 75, 24, 79, 98, 19 and 40</li>
+            </ul>
         </p>
+        <br>
+        <p>
+            To confirm our results, we can visualise the distribution for each most relevant encoding we hnandpicked using a violin plot.
+            <img src="UnsupervisedLearning_graphs/ViolinPlots.png">
+        </p>
+        <p>
+            We observe that most of the encodings have non-overlapping 95% confidence intervals (CI) with the other clusters' 95% CI. 
+            This is good news for us as it means that the difference is statistically significative <i>(always a yay when we get to say that)</i>.
+            Hence, this gives more confidence in our results and in the fact that some tropes have their own encodings, and surely require such unique encodings to be accepted as individual tropes.
+        </p>
+        <p>
+            I think we're onto something now... Let's keep digging.
+        </p>
+        <br>
+        <p>
+            Having found the specific encodings for each cluster, we determine the centroid of each cluster and define it as the general representation of characters associated to that cluster.
+        </p>
+        <p>
+            Although the encodings are very useful to compare the similarities between actor faces and allows us to cluster the characters together, they still remain quite mysterious.
+            Indeed, it is hard to understand what these encodings represent physically. Thankfully, we have our landmarks to the rescue!
+            We will use the proportions obtained by the facial landmarks to "translate" what really defines each cluster.
+            For example, for Cluster 1, although it may not contain a specific trope, upon further digging, we observe that C1 contains a specific ethnicity: <code>black</code>.
+            This explains why we observe the nose width, courtesy of our landmarks, of said cluster differs from the other clusters.
+        </p>
+        <br>
+        <p>
+            We can display images of the actors that best represent each cluster of interest i.e C2, C3 and C4. 
+        </p>
+        <p>
+            To no one's surprise, we have three images of female actors for our representation of C2.
+            <img src="UnsupervisedLearning_graphs/ActorsC2.png">
+        </p>
+        <p>
+            For C3, maybe beards could be a defining feature <i>(note to self: grow a beard)</i>!
+            <img src="UnsupervisedLearning_graphs/ActorsC3.png">
+        </p>
+        <p>
+            And for Cluster 4, we have these three actors images:
+            <img src="UnsupervisedLearning_graphs/ActorsC4.png">
+        </p>
+        <br>
+        <p>
+            In summary, by allowing the data to cluster by itself, we were able to identify three clusters of interest <i>(C2, C3 and C4)</i>. 
+            Each cluster represented their own tropes and had their own most relevant encodings and landmarks. 
+            We're edging closer to an answer to our overarching question, I'm getting goosebumps just thinking about it!
+        </p>
+        <p>
+            I'll let you hop over to the Supervised Learning chapter now to continue on our data story, we wouldn't want the narrator over there feeling too lonely.
+        </p>
+        <h3> <a href="https://tim1110mann.github.io/ADAcadabra1000101/supervised-learning.html">Supervised Learning</a></h3>
+        <p>
+            You're still here? Wait... no... that means you chose to read my chapter in second?! I can't believe it...
+        </p>
+        <p>
+            Fine then. See if I care. Go on, go over to the final chapter.
+        </p>
+        <h3> <a href="https://tim1110mann.github.io/ADAcadabra1000101/conclusion.html">Conclusion</a></h3>
     </div>
 </body>
 </html>
