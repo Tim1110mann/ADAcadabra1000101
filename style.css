@@ -178,7 +178,7 @@ img {
     margin: 0 auto; 
 }
 
-figcaption {
+figure figcaption {
     text-align: center;
     color: grey;
     font-family: 'Merriweather', serif;
