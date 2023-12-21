@@ -66,7 +66,7 @@
             Now let's get down to the nitty gritty and fun details.
         </p>
         <p>
-            We use the Euclidean distance between encodings as a metric of ressemblance between actors, and in consequence characters.
+            An actor an thus a character is represented here as a vector of encodings. We use the Euclidean distance between encodings as a metric of ressemblance between actors, and in consequence characters.
             Our default threshold that defines whether two faces ressemble each other is 0.6 in terms of euclidean distance.
             In other words, if the euclidean distance between actors is around 1, the actors do not ressemble each other.
         </p>
@@ -82,7 +82,7 @@
             We obtain 4 clusters, yay! What does this mean concretely though, you ask? Good question!
         </p>
         <p>
-            We say that a trope is represented by a cluster when at least 50% of characters of that trope are present in said cluster.
+            We say that a trope is represented by a cluster when more than 50% of characters of that trope are present in said cluster.
             <img src="UnsupervisedLearning_graphs/Tropes composition pie-1.png">
             <img src="UnsupervisedLearning_graphs/Tropes composition pie-2.png">
             <img src="UnsupervisedLearning_graphs/Tropes composition pie-3.png">
@@ -99,6 +99,11 @@
         </p>
         <p>
             So, of the 16 tropes we identified in our <a href=""https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing </a> step, 13 of them cluster together in a specific cluster.
+            Only <code>tech_genius</code>, <code>loser</code> and <code>jock</code> do not have more than 50% of their characters associated with a specific cluster. 
+            However, more than 40% of their characters are associated both with the clusters C3 and C4. 
+            This highligts the fact that, even if we have chosen to use hard clustering to separate our tropes in different clusters, in reality tropes are often distributed in a spectrum.
+            Hence, these tropes are surely at the interface of C3 and C4.
+        </br>
             Interesteing stuff, right? Let's zoom in and dive into the inter- and intra-cluster analysis.
         </p>
         <br>
@@ -165,7 +170,7 @@
             <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot.html" width=100% height="600"></iframe>
         </p>
         <p>
-            We can zoom in to better visualise our distribution by filtering our encodings with a MAD ratio smaller than 1.
+            We can zoom in to better visualise our distribution by filtering our encodings with a MAD ratio smaller than 1, that is those varying less in a cluster than in the data.
             <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot_ratiovariation1(zoom).html" width=100% height="600"></iframe>
         </p>
         <br>
@@ -215,6 +220,7 @@
         <br>
         <p>
             We can finish things off by displaying images of the actors that best represent each cluster of interest i.e. C2, C3 and C4.
+            Best representing actors are picked here as the three closest actors from the cluster's most relevant encodings centroid.
             As such, we are quite literally putting a face to each cluster's own tropes and facial features!
         </p>
         <p>
