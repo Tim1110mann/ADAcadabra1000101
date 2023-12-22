@@ -88,7 +88,7 @@
                     <tr>
                         <th>Tropes</th>
                         <th>F1-Score</th>
-                    </tr>
+                    <\tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -157,6 +157,31 @@
                     </tr>
                 </tbody>
             </table>
+        </p>
+        <p>
+            As said above, a high F1-score means that the model has a good balance at not only identifying most of the true tropes but also maintaining a low rate of false positives.
+            We can observe <code>laidback_freebird</code> as a trope with seemingly distinctive features.
+        </p>
+        <p>
+            As such, to select the tropes that are best described by our model, we set a F1-score threshold of <b>0.15</b>.
+            This allows us to focus our energy on the tropes where the link between features and trope is strong and statistically significant, potentially leading to more confident insights into Hollywood's typecasting patterns.
+            We select the following tropes:
+            <ul>
+                <li><code>charimastic_charmer</code></li>
+                <li><code>jock</code></li>
+                <li><code>dumb_and_clumsy</code></li>
+                <li><code>emotional_damage</code></li>
+                <li><code>laidback_freebird</code></li>
+                <li><code>old_wise_quirky</code></li>
+                <li><code>shallow_and_popular</code></li>
+                <li><code>respected_leader</code></li>
+            </ul>
+        </p>
+        <br>
+        <h2>Individual Model Training</h2>
+        <p>
+            We now have 8 character tropes of interest.
+            After a multi-class approach in the step above, I think these each tropes are craving a bit of one-on-one attention.
         </p>
     </div>
 </body>
