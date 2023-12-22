@@ -83,82 +83,85 @@
             The F1-score is a measure of predictive performance. 
             And so in our case, the higher the F1-score, the better our classification algorithm can find a pattern of features that best describe our tropes.
             We compute the F1-score for each of our 16 character tropes and get the following table:
-            <div id="table-container">
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Tropes</th>
-                            <th>F1-Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>charismatic_charmer</code></td>
-                            <td>0.36</td>
-                        </tr>
-                        <tr>
-                            <td><code>crazy_fighter</code></td>
-                            <td>0.13</td>
-                        </tr>
-                        <tr>
-                            <td><code>crazy_jealous_guy</code></td>
-                            <td>0.10</td>
-                        </tr>
-                        <tr>
-                            <td><code>dumb_and_clumsy</code></td>
-                            <td>0.26</td>
-                        </tr>
-                        <tr>
-                            <td><code>emotional_damage</code></td>
-                            <td>0.24</td>
-                        </tr>
-                        <tr>
-                            <td><code>evil_character</code></td>
-                            <td>0.05</td>
-                        </tr>
-                        <tr>
-                            <td><code>jock</code></td>
-                            <td>0.26</td>
-                        </tr>
-                        <tr>
-                            <td><code>laidback_freebird</code></td>
-                            <td>0.50</td>
-                        </tr>
-                        <tr>
-                            <td><code>loser</code></td>
-                            <td>0.09</td>
-                        </tr>
-                        <tr>
-                            <td><code>mean_officer</code></td>
-                            <td>0.09</td>
-                        </tr>
-                        <tr>
-                            <td><code>old_wise_quirky</code></td>
-                            <td>0.23</td>
-                        </tr>
-                        <tr>
-                            <td><code>respected_leader</code></td>
-                            <td>0.21</td>
-                        </tr>
-                        <tr>
-                            <td><code>shallow_and_popular</code></td>
-                            <td>0.39</td>
-                        </tr>
-                        <tr>
-                            <td><code>sidekick</code></td>
-                            <td>0.15</td>
-                        </tr>
-                        <tr>
-                            <td><code>skilled_badass</code></td>
-                            <td>0.13</td>
-                        </tr>
-                        <tr>
-                            <td><code>tech_genius</code></td>
-                            <td>0.15</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <figure>
+                <div id="table-container">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Tropes</th>
+                                <th>F1-Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>charismatic_charmer</code></td>
+                                <td>0.36</td>
+                            </tr>
+                            <tr>
+                                <td><code>crazy_fighter</code></td>
+                                <td>0.13</td>
+                            </tr>
+                            <tr>
+                                <td><code>crazy_jealous_guy</code></td>
+                                <td>0.10</td>
+                            </tr>
+                            <tr>
+                                <td><code>dumb_and_clumsy</code></td>
+                                <td>0.26</td>
+                            </tr>
+                            <tr>
+                                <td><code>emotional_damage</code></td>
+                                <td>0.24</td>
+                            </tr>
+                            <tr>
+                                <td><code>evil_character</code></td>
+                                <td>0.05</td>
+                            </tr>
+                            <tr>
+                                <td><code>jock</code></td>
+                                <td>0.26</td>
+                            </tr>
+                            <tr>
+                                <td><code>laidback_freebird</code></td>
+                                <td>0.50</td>
+                            </tr>
+                            <tr>
+                                <td><code>loser</code></td>
+                                <td>0.09</td>
+                            </tr>
+                            <tr>
+                                <td><code>mean_officer</code></td>
+                                <td>0.09</td>
+                            </tr>
+                            <tr>
+                                <td><code>old_wise_quirky</code></td>
+                                <td>0.23</td>
+                            </tr>
+                            <tr>
+                                <td><code>respected_leader</code></td>
+                                <td>0.21</td>
+                            </tr>
+                            <tr>
+                                <td><code>shallow_and_popular</code></td>
+                                <td>0.39</td>
+                            </tr>
+                            <tr>
+                                <td><code>sidekick</code></td>
+                                <td>0.15</td>
+                            </tr>
+                            <tr>
+                                <td><code>skilled_badass</code></td>
+                                <td>0.13</td>
+                            </tr>
+                            <tr>
+                                <td><code>tech_genius</code></td>
+                                <td>0.15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <figcaption>Table of F1-Scores per Trope</figcaption>
+            </figure>
         </p>
         <br>
         <p>
@@ -191,7 +194,11 @@
         <br>
         <p>
             We can visualise these results in this nice heat map:
-            <img src="causalanalysis_plots/Heatmap.png">
+            <figure>
+                <img src="causalanalysis_plots/Heatmap.png">
+                <figcaption>Heatmap of the Feature Importance per Trope</figcaption>
+            </figure>
+            
         </p>
         <br>
         <p>
@@ -204,7 +211,19 @@
             I wonder if the <a href="https://tim1110mann.github.io/ADAcadabra1000101/unsupervised-learning.html">unsupervised learning</a> narrator has something to say about...
             We also observe that you need to be old to play the <code>old_wise_quirky</code> trope (that was not really much a surprise, but I'd still appreciate an audible gasp of shock).
             A really interesting one is for the <code>emotional_damage</code> trope with a high value for the <code>Face Shape</code> feature. 
-            Perhaps, this could suggest that actors with a rounder face shape are more likely to play the <code>emotional_damage</code> trope.
+            Perhaps, this could suggest that actors with a rounder face shape are more likely to play the <code>emotional_damage</code> trope. 
+            Interesting stuff, right?
+        </p>
+        <br>
+        <p>
+            To confirm our results, we evaluated the statistical significance of each feature for each trope.
+            So for each trope, we only plotted the coefficients of their statistically significant features (so don't be surprised when some features seem to dissapear!).
+            Please note that we separated the <code>ActorGender</code> variable into two, one for female and one for male.
+            <figure>
+                <iframe src="causalanalysis_plots/significantcoef_plot.html">width=100% height="600"></iframe>
+                <figcaption>Bar Chart of the Coeffiecients of the Statistically Significant Features of Each Trope</figcaption>
+            </figure>
+            
         </p>
     </div>
 </body>
