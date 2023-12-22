@@ -142,6 +142,10 @@ ul, li {
     text-align: left;
 }
 
+table {
+    font-size: 14px;
+}
+
 /* Paragraph style */
 p {
     text-align: left; /* Left-align the text within paragraphs */
