@@ -142,6 +142,10 @@ ul, li {
     text-align: left;
 }
 
+#table-container {
+    text-align: center;
+}
+
 table {
     font-size: 19px;
 }
