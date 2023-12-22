@@ -191,11 +191,20 @@
         <br>
         <p>
             We can visualise these results in this nice heat map:
+            <img src="causalanalysis_plots/Heatmap.png">
         </p>
         <br>
         <p>
             There's quite a bit of interesting results to pick from this heat map. 
-            Note that the redder the box, the more important the feature is for that trope.
+            Note that the redder the box, the more important the feature is for that trope, the bluer, the less important it is. 
+            Let's have a look at the most notable results.
+        </p>
+        <p>
+            For the <code>shallow_and_popular</code> trope, we see that being a woman is a very important feature <i>(we set 1 as female and 0 as male)</i>.
+            I wonder if the <a href="https://tim1110mann.github.io/ADAcadabra1000101/unsupervised-learning.html">unsupervised learning</a> narrator has something to say about...
+            We also observe that you need to be old to play the <code>old_wise_quirky</code> trope (that was not really much a surprise, but I'd still appreciate an audible gasp of shock).
+            A really interesting one is for the <code>emotional_damage</code> trope with a high value for the <code>Face Shape</code> feature. 
+            Perhaps, this could suggest that actors with a rounder face shape are more likely to play the <code>emotional_damage</code> trope.
         </p>
     </div>
 </body>
