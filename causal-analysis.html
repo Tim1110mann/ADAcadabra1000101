@@ -77,87 +77,90 @@
             Now that we planted our tree, what's so special about it?
         </p>
         <p>
-            To answer briefly, the <b>F1-score</b>.
+            To answer briefly, the <b>F1-score</b>... amongst other things but I'll save that for later.
         </p>
         <p>
             The F1-score is a measure of predictive performance. 
             And so in our case, the higher the F1-score, the better our classification algorithm can find a pattern of features that best describe our tropes.
             We compute the F1-score for each of our 16 character tropes and get the following table:
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Tropes</th>
-                        <th>F1-Score</th>
-                    <\tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>charismatic_charmer</code></td>
-                        <td>0.36</td>
-                    <\tr>
-                    <tr>
-                        <td><code>crazy_fighter</code></td>
-                        <td>0.13</td>
-                    </tr>
-                    <tr>
-                        <td><code>crazy_jealous_guy</code></td>
-                        <td>0.10</td>
-                    </tr>
-                    <tr>
-                        <td><code>dumb_and_clumsy</code></td>
-                        <td>0.26</td>
-                    </tr>
-                    <tr>
-                        <td><code>emotional_damage</code></td>
-                        <td>0.24</td>
-                    </tr>
-                    <tr>
-                        <td><code>evil_character</code></td>
-                        <td>0.05</td>
-                    </tr>
-                    <tr>
-                        <td><code>jock</code></td>
-                        <td>0.26</td>
-                    </tr>
-                    <tr>
-                        <td><code>laidback_freebird</code></td>
-                        <td>0.50</td>
-                    </tr>
-                    <tr>
-                        <td><code>loser</code></td>
-                        <td>0.09</td>
-                    </tr>
-                    <tr>
-                        <td><code>mean_officer</code></td>
-                        <td>0.09</td>
-                    </tr>
-                    <tr>
-                        <td><code>old_wise_quirky</code></td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td><code>respected_leader</code></td>
-                        <td>0.21</td>
-                    </tr>
-                    <tr>
-                        <td><code>shallow_and_popular</code></td>
-                        <td>0.39</td>
-                    </tr>
-                    <tr>
-                        <td><code>sidekick</code></td>
-                        <td>0.15</td>
-                    </tr>
-                    <tr>
-                        <td><code>skilled_badass</code></td>
-                        <td>0.13</td>
-                    </tr>
-                    <tr>
-                        <td><code>tech_genius</code></td>
-                        <td>0.15</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="table-container">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Tropes</th>
+                            <th>F1-Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>charismatic_charmer</code></td>
+                            <td>0.36</td>
+                        </tr>
+                        <tr>
+                            <td><code>crazy_fighter</code></td>
+                            <td>0.13</td>
+                        </tr>
+                        <tr>
+                            <td><code>crazy_jealous_guy</code></td>
+                            <td>0.10</td>
+                        </tr>
+                        <tr>
+                            <td><code>dumb_and_clumsy</code></td>
+                            <td>0.26</td>
+                        </tr>
+                        <tr>
+                            <td><code>emotional_damage</code></td>
+                            <td>0.24</td>
+                        </tr>
+                        <tr>
+                            <td><code>evil_character</code></td>
+                            <td>0.05</td>
+                        </tr>
+                        <tr>
+                            <td><code>jock</code></td>
+                            <td>0.26</td>
+                        </tr>
+                        <tr>
+                            <td><code>laidback_freebird</code></td>
+                            <td>0.50</td>
+                        </tr>
+                        <tr>
+                            <td><code>loser</code></td>
+                            <td>0.09</td>
+                        </tr>
+                        <tr>
+                            <td><code>mean_officer</code></td>
+                            <td>0.09</td>
+                        </tr>
+                        <tr>
+                            <td><code>old_wise_quirky</code></td>
+                            <td>0.23</td>
+                        </tr>
+                        <tr>
+                            <td><code>respected_leader</code></td>
+                            <td>0.21</td>
+                        </tr>
+                        <tr>
+                            <td><code>shallow_and_popular</code></td>
+                            <td>0.39</td>
+                        </tr>
+                        <tr>
+                            <td><code>sidekick</code></td>
+                            <td>0.15</td>
+                        </tr>
+                        <tr>
+                            <td><code>skilled_badass</code></td>
+                            <td>0.13</td>
+                        </tr>
+                        <tr>
+                            <td><code>tech_genius</code></td>
+                            <td>0.15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </p>
+        <br>
         <p>
             As said above, a high F1-score means that the model has a good balance at not only identifying most of the true tropes but also maintaining a low rate of false positives.
             We can observe <code>laidback_freebird</code> as a trope with seemingly distinctive features.
@@ -182,6 +185,12 @@
         <p>
             We now have 8 character tropes of interest.
             After a multi-class approach in the step above, I think these each tropes are craving a bit of one-on-one attention.
+            Turns out there was more than just the F1-score that was important about our decision tree <i>(Shocker, right?!)</i>.
+            The decision tree gives us another delicious fruit, as it evaluates the importance of each feature, defined previously in our <a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing</a> step, for each trope.
+        </p>
+        <br>
+        <p>
+            We can visualise these results in this nice heat map:
         </p>
     </div>
 </body>
