@@ -71,11 +71,17 @@
             In other words, if the euclidean distance between actors is around 1, the actors do not ressemble each other.
         </p>
         <p>
-            We chose hierarchical clustering as our method for grouping. This entails cluster maps and dendogram functions from the Seaborn Library.
+            We chose hierarchical clustering as our method for grouping. This entails cluster maps and dendrogram functions from the Seaborn Library.
             As such, we built out our cluster map based on Euclidean distance, using the "complete" function to define the distance between two clusters. 
             That means that the distance between cluster <code>u</code> and the cluster <code>v</code> is defined as the maximum distance between a point in <code>u</code> and a point in <code>v</code>.
-            <img src="UnsupervisedLearning_graphs/HeatMap Characters.png">
-            <img src="UnsupervisedLearning_graphs/Dendogram_characters.png">
+            <figure>
+               <img src="UnsupervisedLearning_graphs/HeatMap Characters.png">
+               <figcaption>Clustermap of Characters based on Euclidean distance, using the "complete" method. Individual colors on the left side were assigned for each of the 16 tropes.</figcaption>
+            </figure>
+            <figure>
+               <img src="UnsupervisedLearning_graphs/Dendogram_characters.png">
+               <figcaption>Dendrogram representing the above clustermap. Each of the four colors is a distinct cluster.</figcaption>
+            </figure>
         </p>
         <br>
         <p>
@@ -83,10 +89,13 @@
         </p>
         <p>
             We say that a trope is represented by a cluster when more than 50% of characters of that trope are present in said cluster.
-            <img src="UnsupervisedLearning_graphs/Tropes composition pie-1.png">
-            <img src="UnsupervisedLearning_graphs/Tropes composition pie-2.png">
-            <img src="UnsupervisedLearning_graphs/Tropes composition pie-3.png">
-            <img src="UnsupervisedLearning_graphs/Tropes composition pie-4.png">
+            <figure>
+              <img src="UnsupervisedLearning_graphs/Tropes composition pie-1.png">
+              <img src="UnsupervisedLearning_graphs/Tropes composition pie-2.png">
+              <img src="UnsupervisedLearning_graphs/Tropes composition pie-3.png">
+              <img src="UnsupervisedLearning_graphs/Tropes composition pie-4.png">
+              <figcaption>Pie charts of tropes' characters percentages present in each found cluster</figcaption>
+            </figure>
         </p>
         <br>
         <p>
@@ -128,7 +137,10 @@
             We observe that this Cluster is mainly represented by women. 
             It seems like these tropes are primarily played by women. 
             A quick look at the gender representation by cluster confirms this. It's another clue, we're getting closer!
-            <img src="UnsupervisedLearning_graphs/GenderinClusters.png">
+            <figure>
+                <img src="UnsupervisedLearning_graphs/GenderinClusters.png">
+                <figcaption>Pie charts of gender distribution</figcaption>
+            </figure>
         </p>
         <br>
         <p>
@@ -171,11 +183,17 @@
         <br>
         <p>
             We can observe this in our scatter plot below.
-            <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot.html" width=100% height="600"></iframe>
+            <figure>
+               <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot.html" width=100% height="600"></iframe>
+               <figcaption>Scatterplot of encodings Median Absolut Deviation Ratio against Median Z-Score with points' size given by the minimum distance</figcaption>
+            </figure>
         </p>
         <p>
             We can zoom in to better visualise our distribution by filtering our encodings with a MAD ratio smaller than 1, that is those varying less in a cluster than in the data.
-            <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot_ratiovariation1(zoom).html" width=100% height="600"></iframe>
+            <figure>
+              <iframe src="UnsupervisedLearning_graphs/EncodingsScatterplot_ratiovariation1(zoom).html" width=100% height="600"></iframe>
+              <figcaption>Scatterplot of encodings Median Absolut Deviation Ratio against Median Z-Score with points' size given by the minimum distance, for encodings with a MAD Ratio smaller than 1</figcaption>
+            </figure>
         </p>
         <br>
         <p>
@@ -188,8 +206,11 @@
         </p>
         <br>
         <p>
-            To confirm our results, we can visualise the distribution for each most relevant encoding we hnandpicked using a violin plot.
-            <img src="UnsupervisedLearning_graphs/ViolinPlots.png">
+            To confirm our results, we can visualise the distribution for each most relevant encoding we handpicked using a violin plot.
+            <figure>
+              <img src="UnsupervisedLearning_graphs/ViolinPlots.png">
+              <figcaption>Violin plots with median and median 95% confidence interval of the most relevant encodings per cluster</figcaption>
+            </figure>
         </p>
         <p>
             We observe that most of the encodings have non-overlapping 95% confidence intervals (CI) with the other clusters' 95% CI. 
@@ -213,9 +234,12 @@
         </p>
         <br>
         <p>
-            So we use 7 different proportions of facial features we plotted in our <a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing step</a>: 
+            So we use 7 different facial proportions we plotted in our <a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing step</a>: 
             <code>Eye Distance</code>, <code>Eye Position</code>, <code>Nose Length</code>, <code>Eyebrow Length</code>, <code>Face Shape</code> and <code>Cheek Bones</code>.
-            <img src="UnsupervisedLearning_graphs/Violinplots_landmarks.png">
+            <figure>
+              <img src="UnsupervisedLearning_graphs/Violinplots_landmarks.png">
+              <figcaption>Violin plots with median and median 95% confidence interval for the seven facial proportions</figcaption>
+            </figure>
         </p>
         <p>
             We notice that Cluster 2 is particularly distinguishable in all facial features compared to C3 and C4.
@@ -224,12 +248,15 @@
         <br>
         <p>
             We can finish things off by displaying images of the actors that best represent each cluster of interest i.e. C2, C3 and C4.
-            Best representing actors are picked here as the three closest actors from the cluster's most relevant encodings centroid.
+            Best representative actors are picked here as the three closest actors from the cluster's most relevant encodings centroid.
             As such, we are quite literally putting a face to each cluster's own tropes and facial features!
         </p>
         <p>
             To no one's surprise, we have three images of female actors for our representation of C2.
-            <img src="UnsupervisedLearning_graphs/ActorsC2.png">
+            <figure>
+               <img src="UnsupervisedLearning_graphs/ActorsC2.png">
+               <figcaption>Best representative actors of the cluster C2</figcaption>
+            </figure>
         </p>
         <p>
             From our analysis, they played mostly the <code>shallow_and_popular</code>, <code>emotional_damage</code> and <code>dumb_and_clumsy</code> tropes.
@@ -237,7 +264,10 @@
         <br>
         <p>
             For C3, maybe beards could be a defining feature <i>(note to self: grow a beard)</i>!
-            <img src="UnsupervisedLearning_graphs/ActorsC3.png">
+            <figure>
+                <img src="UnsupervisedLearning_graphs/ActorsC3.png">
+                <figcaption>Best representative actors of the cluster C3</figcaption>
+             </figure>
         </p>
         <p>
             They mainly represented the <code>charismatic_charmer</code>, <code>laidback_freebird</code>, <code>sidekick</code> and <code>crazy_jealous_guy</code> tropes.
@@ -245,7 +275,10 @@
         <br>
         <p>
             And for Cluster 4, we have these three actors images:
-            <img src="UnsupervisedLearning_graphs/ActorsC4.png">
+            <figure>
+                <img src="UnsupervisedLearning_graphs/ActorsC4.png">
+                <figcaption>Best representative actors of the cluster C4</figcaption>
+             </figure>    
         </p>
         <p>
             And to finish things off, the actors in C4 represented a wide array of character tropes, mainly playing the <code>crazy_fighter</code>, <code>mean_officer</code>, <code>skilled_badass</code>, <code>old_wise_quirky</code>, <code>respected_leader</code> and <code>evil_character</code> tropes.
