@@ -55,7 +55,7 @@
         </p>
         <br>
         <p>
-            From our <a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing</a>, we defined the key terms of our main question, the<b>features</b> and the <b>character tropes</b>.
+            From our <a href="https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing</a>, we defined the key terms of our main question, the <b>features</b> and the <b>character tropes</b>.
             In this chapter, we are opting for a more causal approach.
             In other words, given an input <code>X</code>, we can find the output <code>y</code> via a function <code>f(X)</code>, with <code>f(X)</code> being the main mystery.
         </p>
@@ -169,7 +169,8 @@
             We can observe <code>laidback_freebird</code> as a trope with seemingly distinctive features.
         </p>
         <p>
-            As such, to select the tropes that are best described by our model, we set a F1-score threshold of <b>0.15</b>.
+            As such, to select the tropes that are best described by our model, we set a F1-score threshold of <b>0.20</b>.
+            We know that the F1-scores are fairly low but this can be due to our small dataset in terms of actors per tropes as well as low number of features extracted compared to an human eye.
             This allows us to focus our energy on the tropes where the link between features and trope is strong and statistically significant, potentially leading to more confident insights into Hollywood's typecasting patterns.
             We select the following tropes:
             <ul>
@@ -211,7 +212,11 @@
             I wonder if the <a href="https://tim1110mann.github.io/ADAcadabra1000101/unsupervised-learning.html">unsupervised learning</a> narrator has something to say about...
             We also observe that you need to be old to play the <code>old_wise_quirky</code> trope (that was not really much a surprise, but I'd still appreciate an audible gasp of shock).
             A really interesting one is for the <code>emotional_damage</code> trope with a high value for the <code>Face Shape</code> feature. 
-            Perhaps, this could suggest that actors with a rounder face shape are more likely to play the <code>emotional_damage</code> trope. 
+            Perhaps, this could suggest that actors with a rounder face shape are more likely to play the <code>emotional_damage</code> trope.
+        </p>
+        <p>
+            We should note that the values between 0.18 and 0.20 are still fairly high (despite being very blue) as it could more be a sum of various features that particularly define a trope rather than just one.
+            Take for example the <code>jock</code>, we identify <code>Actor Height</code>, <code>Actor Age</code> and <code>Face Height</code> as important features.
         </p>
         <p>
             However, we notice that for some tropes, features seem to have little to no importance. 
