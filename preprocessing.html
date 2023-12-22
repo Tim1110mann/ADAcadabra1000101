@@ -61,7 +61,10 @@
                 The CMU Corpus provides us with 72 character tropes, based of <a href="https://tvtropes.org/">TVTropes.org</a>, with 501 characters manually categorised in each.
                 As such, we narrow our focus on these 501 characters.
                 We can view the distribution of these characters per trope in the graph below.
-                <img src="preprocessing_graphs/characters_per_trope.png" alt="Characters per Trope">
+                <figure>
+                   <img src="preprocessing_graphs/characters_per_trope.png" alt="Characters per Trope">
+                   <figcaption>Histogram of the number of characters per trope provided by the CMU Corpus</figcaption>
+                </figure>
             </p>
             <p>
                 Our first reaction seeing this graph was "Wow, there are a lot of crazy jealous guys in movies!" followed by "Why does no one want to be a classy cat burglar?".
@@ -97,7 +100,10 @@
             <br>
             <p>
                 We can plot the number of characters per trope to observe their distribution as we did before.
-                <img src="preprocessing_graphs/characters_per_newgrped_tropes.png" alt="Characters per (New) Tropes">
+                <figure>
+                  <img src="preprocessing_graphs/characters_per_newgrped_tropes.png" alt="Characters per (New) Tropes">
+                  <figcaption>Histogram of the number of characters per trope manually grouped</figcaption>
+                </figure>
             </p>
             <p>
                 There is now at least a dozen characters per trope, giving us a much better sample size to base our analysis on.
@@ -126,7 +132,10 @@
             <p> 
                 Let us now explore <code>ActorHeight</code>, <code>ActorAge</code> and <code>ActorGender</code>. 
                 These variables did not have nearly as many missing values as <code>ActorEthnicity</code> and as such, we were able to complete them manually.
-                <img src="preprocessing_graphs/ActorHeight - ActorAge by Gender.png">
+                <figure>
+                  <img src="preprocessing_graphs/ActorHeight - ActorAge by Gender.png">
+                  <figcaption>Scatter plot (left) and histogram (right) of actor height (top) and actor age (bottom), colored by gender</figcaption>
+                </figure>
             </p>
             <p>
                 From the plots, we observe that female actors are usually much younger than their male counterparts <i>(and smaller but this is probably more a matter of biology than casting preference)</i>.
@@ -159,7 +168,10 @@
             </p>
             <p>
                 The facial landmarks are a set of 68 coordinates (x and y), corresponding to the implacement of human face specific landmarks such as eyes, nose, eyebrows, lips and chin in the image.
-                <img src="68 Facial points ADA.jpg">
+                <figure></figure>
+                   <img src="68 Facial points ADA.jpg">
+                   <figcaption>Schematic representation of the 68 facial landmarks</figcaption>
+                </figure>
             </p>
             <br>
             <p>
@@ -176,7 +188,10 @@
                 For example, an actor may appear to have large eyes due to their small face while in absolute their eyes are averaged sized.
                 We identify various distinctive facial features, <code>Eye Distance</code>, <code>Eye Positon</code>, <code>Nose Length</code>, <code>Nose Width</code>, <code>Eyebrow Length</code>, <code>Face Shape</code> and <code>Cheek Bones</code>.
                 Let us look which of these facial features are independent by observing their distributions.
-                <img src="preprocessing_graphs/Distribution of Facial Landmarks.png">
+                <figure>
+                   <img src="preprocessing_graphs/Distribution of Facial Landmarks.png">
+                   <figcaption>Pair plot of actors' facial features. Upper part : correlation coefficients. Diagonal : histograms. Lower part : scatter plots with linear regression model fit</figcaption>
+                </figure>
             </p>
             <p>
                 Three parameters jump out as variables of interest for us.
