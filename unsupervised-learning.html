@@ -66,14 +66,16 @@
             Now let's get down to the nitty gritty and fun details.
         </p>
         <p>
-            An actor an thus a character is represented here as a vector of encodings. We use the Euclidean distance between encodings as a metric of ressemblance between actors, and in consequence characters.
+            An actor, and thus a character, is represented here as a vector of encodings. 
+            We use the Euclidean distance between encodings as a metric of ressemblance between characters.
             Our default threshold that defines whether two faces ressemble each other is 0.6 in terms of euclidean distance.
             In other words, if the euclidean distance between actors is around 1, the actors do not ressemble each other.
         </p>
         <p>
-            We chose hierarchical clustering as our method for grouping. This entails cluster maps and dendrogram functions from the Seaborn Library.
-            As such, we built out our cluster map based on Euclidean distance, using the "complete" function to define the distance between two clusters. 
-            That means that the distance between cluster <code>u</code> and the cluster <code>v</code> is defined as the maximum distance between a point in <code>u</code> and a point in <code>v</code>.
+            We chose hierarchical clustering as our method for grouping. 
+            This entails cluster maps and dendrogram functions from the Seaborn Library.
+            As such, we built out our cluster map based on Euclidean distance, using the <code>complete</code> function to define the distance between two clusters. 
+            This means that the distance between cluster <code>u</code> and the cluster <code>v</code> is defined as the maximum distance between a point in <code>u</code> and a point in <code>v</code>.
             <figure>
                <img src="UnsupervisedLearning_graphs/HeatMap Characters.png">
                <figcaption>Clustermap of Characters based on Euclidean distance, using the "complete" method. Individual colors on the left side were assigned for each of the 16 tropes.</figcaption>
@@ -85,7 +87,8 @@
         </p>
         <br>
         <p>
-            We obtain 4 clusters, yay! What does this mean concretely though, you ask? Good question!
+            We obtain 4 clusters, yay! We name them C1, C2, C3 and C4 (Pretty original if I do say so myself...)
+            What does this mean concretely though, you ask? Good question!
         </p>
         <p>
             We say that a trope is represented by a cluster when more than 50% of characters of that trope are present in said cluster.
@@ -107,20 +110,20 @@
             </ul>
         </p>
         <p>
-            So, of the 16 tropes we identified in our <a href=""https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing </a> step, 13 of them cluster together in a specific cluster.
+            So, of the 16 tropes we identified in our <a href=""https://tim1110mann.github.io/ADAcadabra1000101/preprocessing.html">pre-processing </a> step, 13 appear in clusters.
             Only <code>tech_genius</code>, <code>loser</code> and <code>jock</code> do not have more than 50% of their characters associated with a specific cluster. 
-            However, more than 40% of their characters are associated both with the clusters C3 and C4. 
-            This highligts the fact that, even if we have chosen to use hard clustering to separate our tropes in different clusters, in reality tropes are often distributed in a spectrum.
+            However, more than 40% of their characters are associated with both C3 and C4. 
+            This highligths that, even if we have chosen to use hard clustering to separate our tropes, in reality tropes are often distributed in a spectrum.
             Hence, these tropes are surely at the interface of C3 and C4.
         </br>
-            Interesteing stuff, right? Let's zoom in and dive into the inter- and intra-cluster analysis.
+            Interesting stuff, right? Let's zoom in and dive into the inter- and intra-cluster analysis.
         </p>
         <br>
         <p>
             The cluster C1 is very interesting. 
             It is the cluster with the less intra-cluster variation compared to the complete data variation but it has no trope associated with it. 
-            This suggests that characters from this cluster have very similar encodings, facial traits, but that those traits are not representative of any trope. F
-            urther investigations leads to the conclusion that this cluster is composed uniquely of black people and comprises all the black people we have in the dataset. 
+            This suggests that characters from this cluster have very similar encodings, facial traits, but that those traits are not representative of any trope. 
+            Further investigations leads to the conclusion that this cluster is composed uniquely of black people and comprises all the black people in our dataset. 
             It indicates that we have a bias that separates black people from white people, and that for our algorithm this difference is more important than the difference between tropes.
             <figure>
                 <img src="UnsupervisedLearning_graphs/ActorsC1.png">
@@ -129,13 +132,12 @@
         </p>
         
         <p>
-            However, as Cluster 1 does not represent any of the tropes, we do not include it in further analysis.
+            Hence, as Cluster 1 does not represent any of the tropes, we do not include it in any further analysis.
         </p>
         <br>
         <p>
             Cluster 2 represents more than 80% of the <code>shallow_and_popular</code> trope and more than 50% of the <code>emotional_damage</code> and <code>dumb_and_clumsy</code> tropes.
-            We observe that this Cluster is mainly represented by women. 
-            It seems like these tropes are primarily played by women. 
+            We observe that this Cluster is mainly represented by women, perhaps indicating that these tropes are mainly female-led.
             A quick look at the gender representation by cluster confirms this. It's another clue, we're getting closer!
             <figure>
                 <img src="UnsupervisedLearning_graphs/GenderinClusters.png">
@@ -144,7 +146,7 @@
         </p>
         <br>
         <p>
-            For cluster 3 and 4, we wanted to see if redoing the clustering on these clusters would allow us to further group tropes but no dice. 
+            For cluster 3 and 4, we wanted to see if re-doing the clustering on these clusters would allow us to further group tropes but no dice. 
             None of the sub-clusters contained any majority of any of the tropes.
             As such, we keep the clusters 3 and 4 as they are.
         </p>
@@ -158,7 +160,7 @@
         <br>
         <h2>Each cluster's very own encodings</h2>
         <p>
-            Now, we analyse the encodings for each cluster of interest, defined henceforth as C2, C3 and C4.
+            Now, we analyse the encodings for each cluster of interest.
             As such, for example if encoding <code>x</code> is very specific to C2 and differ from other clusters, we decide that this particular encoding can be used to describe people belonging to Cluster 2.
             Let us find the most relevant encodings per cluster.
         </p>
@@ -199,9 +201,9 @@
         <p>
             From the scatter plot, we hand-picked the following most relevant encodings for each cluster using the criteria mentionned above.
             <ul>
-                <li>Cluster 2: 77, 85, 63, 127, 89, 9, 81 and 72</li>
-                <li>Cluster 3: 28, 93, 107, 10, 78 and 53</li>
-                <li>Cluster 4: 75, 24, 79, 98, 19 and 40</li>
+                <li>Cluster 2: Encoding 77, 85, 63, 127, 89, 9, 81 and 72</li>
+                <li>Cluster 3: Encoding 28, 93, 107, 10, 78 and 53</li>
+                <li>Cluster 4: Encoding 75, 24, 79, 98, 19 and 40</li>
             </ul>
         </p>
         <br>
@@ -229,7 +231,7 @@
             Although the encodings are very useful to compare the similarities between actor faces and allows us to cluster the characters together, they still remain quite mysterious.
             Indeed, it is hard to understand what these encodings represent physically. Thankfully, we have our landmarks to the rescue!
             We will use the proportions obtained by the facial landmarks to "translate" what really defines each cluster.
-            For example, for Cluster 1, although it may not contain a specific trope, upon further digging, we observe that C1 contains a specific ethnicity: <code>black</code>.
+            For example, for Cluster 1, although it may not contain a specific trope, we know that C1 contains a specific ethnicity.
             This explains why we observe the nose width, courtesy of our landmarks, of said cluster differs from the other clusters.
         </p>
         <br>
@@ -247,7 +249,7 @@
         </p>
         <br>
         <p>
-            We can finish things off by displaying images of the actors that best represent each cluster of interest i.e. C2, C3 and C4.
+            We can finish things off by displaying images of the actors that best represent C2, C3 and C4.
             Best representative actors are picked here as the three closest actors from the cluster's most relevant encodings centroid.
             As such, we are quite literally putting a face to each cluster's own tropes and facial features!
         </p>
