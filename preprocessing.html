@@ -187,17 +187,14 @@
                 In other word, we will not compare the size of actors' noses but rather we will compare the proportion of the different distinctive facial features relative to the actor's face.
                 For example, an actor may appear to have large eyes due to their small face while in absolute their eyes are averaged sized.
                 We identify various distinctive facial features, <code>Eye Distance</code>, <code>Eye Positon</code>, <code>Nose Length</code>, <code>Nose Width</code>, <code>Eyebrow Length</code>, <code>Face Shape</code> and <code>Cheek Bones</code>.
-                Let us look which of these facial features are independent by observing their distributions.
+                Let have a look at these facial features by observing their distributions.
                 <figure>
                    <img src="preprocessing_graphs/Distribution of Facial Landmarks.png">
                    <figcaption>Pair plot of actors' facial features. Upper part : correlation coefficients. Diagonal : histograms. Lower part : scatter plots with linear regression model fit</figcaption>
                 </figure>
             </p>
             <p>
-                Three parameters jump out as variables of interest for us.
-                We observe that the <code>Nose Length</code> is normally distributed, whereas the <code>Eye Distance</code> and <code>Nose Width</code> are skewed towards the right and left, respectively.
-                In terms of correlation, <code>Eye Distance</code> and <code>Nose Length</code> are not correlated, <code>Nose Width</code> and <code>Eye Distance</code> weakly positively correlated, and <code>Nose Width</code> and <code>Nose Length</code> weakly negatively correlated. 
-                This means that we can consider those three parameters, <code>Eye Distance</code>, <code>Nose Length</code>, <code>Nose Length</code> as independant of each other.
+                From this plot, we can see that <code>Eye Distance</code>, <code>Nose Length</code>, <code>Nose Length</code> are independant of each other. 
             </p>
             <br>
             <p>
